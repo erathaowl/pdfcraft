@@ -15,6 +15,6 @@ jobs:
     steps:
       - name: Sync fork
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
           REPOSITORY: ${{ github.repository }}
         run: gh repo sync "$REPOSITORY" --branch main
